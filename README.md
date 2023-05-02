@@ -174,4 +174,4 @@ Apply data visualization techniques to identify the patterns of the data.
 
 # RESULT:
 
-Thus ,to Perform Data Visualization on the given dataset and save the data to a file has been successfully performed.
+Thus, to Perform Data Visualization on the given dataset and save the data to a file has been successfully performed.

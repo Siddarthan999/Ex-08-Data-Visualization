@@ -112,22 +112,34 @@ Apply data visualization techniques to identify the patterns of the data.
 
     #i) Segment
 
+    segment_sales_profit = df.groupby('Segment')['Sales', 'Profit'].mean().reset_index()
+    
     plt.figure(figsize=(8,5))
-
-    sns.scatterplot(x='Sales', y='Profit', hue='Segment', data=df)
-
-    plt.title('Sales vs. Profit based on Segment')
-
+    
+    sns.barplot(x='Segment', y='Sales', data=segment_sales_profit, color='blue', alpha=0.5, label='Sales')
+    
+    sns.barplot(x='Segment', y='Profit', data=segment_sales_profit, color='green', alpha=0.5, label='Profit')
+    
+    plt.title('Segment-wise Sales and Profit')
+    
+    plt.legend()
+    
     plt.show()
 
     #ii) City
 
-    plt.figure(figsize=(8,5))
-
-    sns.scatterplot(x='Sales', y='Profit', hue='City', data=df)
-
-    plt.title('Sales vs. Profit based on City')
-
+    city_sales_profit = df.groupby('City')['Sales', 'Profit'].mean().reset_index().sort_values(by='Profit', ascending=False).head(10)
+    
+    plt.figure(figsize=(12,8))
+    
+    sns.barplot(x='City', y='Sales', data=city_sales_profit, color='blue', alpha=0.5, label='Sales')
+    
+    sns.barplot(x='City', y='Profit', data=city_sales_profit, color='green', alpha=0.5, label='Profit')
+    
+    plt.title('Top 10 Cities by Sales and Profit')
+    
+    plt.legend()
+    
     plt.show()
 
     #iii) States
@@ -166,8 +178,8 @@ Apply data visualization techniques to identify the patterns of the data.
 ![Figure_3](https://user-images.githubusercontent.com/91734840/235737962-fe1e4677-c170-49b7-9b59-460f1f90a9ba.png)
 ![Figure_4](https://user-images.githubusercontent.com/91734840/235737975-c96de982-6c50-43ac-800c-3a3eeb463b94.png)
 ![Figure_5](https://user-images.githubusercontent.com/91734840/235737991-2644ecaa-98f7-4b7e-b003-e7274124f74c.png)
-![Figure_6](https://user-images.githubusercontent.com/91734840/235738007-046f7ef5-84dc-4f6c-8949-5454d54812c4.png)
-![Figure_7](https://user-images.githubusercontent.com/91734840/235738036-9c066a17-d20c-47be-ab4d-acb19ebff4b3.png)
+![Figure_6](https://github.com/Siddarthan999/Ex-08-Data-Visualization/assets/91734840/8e2a3ca2-92a2-40d4-993f-7ec5a33e476b)
+![Figure_7](https://github.com/Siddarthan999/Ex-08-Data-Visualization/assets/91734840/0b18e935-25a2-4489-8197-61c1e25f307e)
 ![Figure_8](https://user-images.githubusercontent.com/91734840/235738051-df018720-d391-4afd-aa4c-9e99051f3b9a.png)
 ![Figure_9](https://user-images.githubusercontent.com/91734840/235738081-fa581566-5c31-4a0d-a054-fc25344fb606.png)
 ![Figure_10](https://user-images.githubusercontent.com/91734840/235738093-68565df2-348d-49bb-a98e-2422ab591fab.png)
